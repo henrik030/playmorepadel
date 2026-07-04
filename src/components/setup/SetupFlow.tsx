@@ -84,7 +84,7 @@ export function SetupFlow({ onComplete }: SetupFlowProps) {
         </div>
       </div>
 
-      <Card className="mt-4 flex-1">
+      <Card className="mt-4">
         <StepHeader step={step} totalSteps={TOTAL_STEPS} title={titles[step]} />
 
         <div className="relative -mx-2 overflow-hidden px-2">
