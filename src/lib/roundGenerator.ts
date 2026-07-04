@@ -191,11 +191,11 @@ export function generateAmericanoRounds(players: Player[], courtCount: number): 
 
   const matchChunks = partnerRounds.map((partnerships) => {
     const realPartnerships: [Player, Player][] = [];
-    for (const pair of partnerships) {
-      // pair[0]/pair[1] === null only happens for the bye placeholder when
-      // the player count is odd - that player simply has no game this round.
-      if (pair[0] !== null && pair[1] !== null) {
-        realPartnerships.push(pair);
+    for (const [a, b] of partnerships) {
+      // a/b === null only happens for the bye placeholder when the player
+      // count is odd - that player simply has no game this round.
+      if (a !== null && b !== null) {
+        realPartnerships.push([a, b]);
       }
     }
 

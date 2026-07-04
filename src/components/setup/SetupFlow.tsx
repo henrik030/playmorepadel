@@ -43,7 +43,7 @@ export function SetupFlow({ onComplete }: SetupFlowProps) {
       return generateAmericanoRounds(players, courtCount).length;
     }
     if (validTeamPairs.length < 2) return 0;
-    const teams = validTeamPairs.map((pair, i) => ({ id: String(i), playerIds: [`${i}a`, `${i}b`] as [string, string] }));
+    const teams = validTeamPairs.map((_, i) => ({ id: String(i), playerIds: [`${i}a`, `${i}b`] as [string, string] }));
     return generateTeamAmericanoRounds(teams, courtCount).length;
   }, [format, validNames, validTeamPairs, courtCount]);
 
